@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mymongodb</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body bgcolor="#E6E6FA">
+
+  <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+       
+     <%=link_to "Home",root_path%> |&nbsp;
+<% if admin_signed_in? %>
+<%=link_to "Logout", destroy_admin_session_path, method: 'delete'%> | &nbsp;
+<%else%>
+<%=link_to "Login",new_admin_session_path%><br><br>
+
+<%end%>  
+
+  
+<%= yield %>
+
+</body>
+</html>

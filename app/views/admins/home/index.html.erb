@@ -1,0 +1,26 @@
+<h2><%=current_admin.first_name%>,Welcome To Admin pannel </h2>
+
+<table bgcolor="#CCEEFF" frame="box">
+  <tr>
+    <td>First Name</th>
+    <th>Last Name</th>
+  <th>Email</th>
+  </tr>
+  
+  
+    <%#@admins.each do |admin|%>
+    <%#*<tr>%>
+      <%#*<td> <%=admin.first_name%%>
+      <%#*<td><%=admin.last_name%%>
+      <%#*<td><%=admin.email%%>
+    <%#*</tr>%>
+    <%#end%>
+
+<tr>
+  <td><%= @admin.first_name%></td>
+  <td><%= @admin.last_name%></td>
+  <td><%= @admin.email%></td>
+ 
+</tr>
+</table>
+  

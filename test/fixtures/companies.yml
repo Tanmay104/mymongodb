@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  subdomain: MyString
+  address1: MyString
+  address2: MyString
+  zip: MyString
+  city: MyString
+  other_industry_type: MyString
+  f_year_start_date: 2014-09-19
+  f_year_end_date: 2014-09-19
+  is_blocked: false
+
+two:
+  name: MyString
+  subdomain: MyString
+  address1: MyString
+  address2: MyString
+  zip: MyString
+  city: MyString
+  other_industry_type: MyString
+  f_year_start_date: 2014-09-19
+  f_year_end_date: 2014-09-19
+  is_blocked: false
