@@ -1,0 +1,60 @@
+
+<h2>Client List</h2>
+
+<style>
+table, td, th {
+    border: 1px solid green;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+}
+
+
+th {
+    
+    background-color: green;
+    color: white;
+}
+</style>
+
+<table bgcolor="#CCEEFF" border="1" frame="box">
+  <tr> 
+  <th>Name</th>
+  <th>Email</th>
+  <th>Contact No</th>
+  <th>City</th>
+  <th>Setup</th>
+  <th>Build Plan</th>
+  <th>Track</th>
+  <th>Report</th>
+  <th>benchmark_report</th>
+  <th>Actions</th>
+  </tr>
+  
+  
+  <%@clients.each do |client|%>
+  <tr>
+    
+    <%#*<tr>%>
+      <%#*<td> <%=admin.first_name%%>
+      <%#*<td><%=admin.last_name%%>
+      <%#*<td><%=admin.email%%>
+    <%#*</tr>%>
+    <%#end%>
+  
+  <td><%= client.first_name%></td>
+  <td><%= client.email%></td>
+  <td><%= client.contact_no%></td>
+  <td><%= client.city%></td>
+  <td><%= client.setup%></td>
+  <td><%= client.build_plan%></td>
+  <td><%= client.track%></td>
+  <td><%= client.report%></td>
+  <td><%= client.benchmark_report%></td>
+  <%end%>
+ 
+</tr>
+</table>
+  

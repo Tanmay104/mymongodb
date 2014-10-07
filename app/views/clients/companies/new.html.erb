@@ -1,47 +1,56 @@
-<%=form_for @company, url: companies_path do |f|%>
+<br><br><%=form_for @company, url: clients_companies_path do |f|%>
 
-<p>
-<%=f.label "Name"%>
-<%=f.text_field :name%>
-</p>
 
-<p>
-<%=f.label "Subdomain"%>
-<%=f.text_field :subdomain%>
-</p>
+<table><tbody>
+  <tr>
+    <td><%=f.label "Name"%></td>
+    <td><%=f.text_field :name%></td>
+  </tr>
+ 
+  <tr>
+    <td><%=f.label "Subdomain"%></td>
+    <td><%=f.text_field :subdomain%></td>
+  </tr>
+  
+  <tr>
+  <td><%=f.label "Address1"%></td>
+  <td><%=f.text_field :address1%></td>
+  </tr>
+  
+  <tr>
+    <td><%=f.label "Address2"%></td>
+    <td><%=f.text_field :address2%></td>
+  </tr>
+  <tr>
 
-<p>
-<%=f.label "Address1"%>
-<%=f.text_field :address1%>
-</p>
+    <td><%=f.label "ZIP"%></td>
+    <td><%=f.text_field :zip%></td>
+  </tr>
 
-<p>
-<%=f.label "Address"%>
-<%=f.text_field :address2%>
-</p>
+  <tr>
+    <td><%=f.label "City"%></td>
+    <td><%=f.text_field :city%></td>
+  </tr>
+  
+  <tr>
+    <td><%=f.label "Industry Type"%></td>
+    <td><%=f.text_field :other_industry_type%></td>
+      
+  <tr>
 
-<p>
-<%=f.label "ZIP"%>
-<%=f.text_field :zip%>
-</p>
 
-<p>
-<%=f.label "City"%>
-<%=f.text_field :city%>
-</p>
+    <td><%=f.label "Start Date"%></td>
+    <td><%=f.text_field :year_start_date%></td>
 
-<p>
-<%=f.label "Other Industry Type"%>
-<%=f.text_field :other_industry_type%>
-</p>
+  </tr>
 
-<p>
-<%=f.label "Start Date"%>
-<%=f.text_field :f_year_start_date%>
-</p>
+  <tr>
+    <td><%=f.label "End Date"%></td>  
+    <td><%=f.text_field :year_end_date%></td>
+  </tr>
+  </tbody>
+</table>
+<%=f.submit "Save"%>
+<%end%>
 
-<p>
-<%=f.label "End Date"%>
-<%=f.text_field :f_year_end_date%>
-</p>
-end
+

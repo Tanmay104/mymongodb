@@ -1,20 +1,62 @@
+
 <h2> Client Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+<table>
+  <tbody>
+  <tr>
+    <td><%= f.label "First Name" %></td>
+    <td> <%= f.text_field :first_name %> </td>
+  </tr>
+  <tr>
+    <td><%= f.label "Middle Name" %></td>
+    <td> <%= f.text_field :mid_name %></td>
+  <tr>
+    <td><%= f.label "Last Name" %></td>
+    <td> <%= f.text_field :last_name %></td></tr>
+  <tr>
+    <td> <%= f.label "Contact No" %></td>
+    <td> <%= f.text_field :contact_no %></td>
+  </tr>
+  <tr>
+    <td><%= f.label "Address1" %></td>
+    <td> <%= f.text_field :address1 %></td>
+  </tr>
+   
+  <tr>
+    <td><%= f.label "Address2" %></td>
+    <td> <%= f.text_field :address2%></td>
+  </tr> 
+      
+  <tr>
+    <td><%= f.label "ZIP" %></td>
+    <td><%= f.text_field :zip%></td>
+  </tr>
+  <tr>
+    <td><%= f.label "City" %></td>
+    <td><%= f.text_field :city%></td>
+  </tr>
+  <tr>
+    <td><%= f.label :email %></td>
+    <td> <%= f.email_field :email, autofocus: true %></td></tr>
+  <tr>
+    <td><%= f.label :Password %><% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %></td>
+  <td><%= f.password_field :password, autocomplete: "off" %></td></tr>
+<tr>
+    <td><%= f.label :Password_confirmation %></td>
+    <td> <%= f.password_field :password_confirmation, autocomplete: "off" %></td></tr>
 
+<tr></tr>
+<tr></tr><tr>
+  <td>   <%= f.label "Access privileges"%></td>
+  <td>   <%= f.check_box :setup%> Setup 
+         <%= f.check_box :build_plan%> Build Plan</td>
+  <td>   <%= f.check_box :track%> Track </td>
+  <td>   <%= f.check_box :report%> Report </td>
+  <td>   <%= f.check_box :benchmark_report%> Benchmark Report </td>
+</tr> </tbody></table><br>   
+  <%= f.submit "Sign up" %>
 
-  <div><%= f.label :Email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
-
-  <div><%= f.label :Password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
-
-  <div><%= f.label :Password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <%  end %>

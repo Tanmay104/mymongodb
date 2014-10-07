@@ -1,0 +1,55 @@
+<h1>Edit Company Details</h1>
+<div align="center">
+ 
+<%=form_for @company, url: clients_companies_path(@company), method: :post do |f|%>
+
+
+<p>
+<%=f.label "Name"%>
+<%=f.text_field :name%>
+</p>
+
+<p>
+<%=f.label "Subdomain"%>
+<%=f.text_field :subdomain%>
+</p>
+
+<p>
+<%=f.label "Address1"%>
+<%=f.text_field :address1%>
+</p>
+
+<p>
+<%=f.label "Address2"%>
+<%=f.text_field :address2%>
+</p>
+
+<p>
+<%=f.label "ZIP"%>
+<%=f.text_field :zip%>
+</p>
+
+<p>
+<%=f.label "City"%>
+<%=f.text_field :city%>
+</p>
+
+<p>
+<%=f.label "Industry Type"%>
+<%=f.text_field :other_industry_type%>
+</p>
+
+<p>
+<%=f.label "Start Date"%>
+<%=f.text_field :year_start_date%>
+</p>
+
+<p>
+<%=f.label "End Date"%>
+<%=f.text_field :year_end_date%>
+</p>
+
+<%=f.submit "Save"%>
+<%end%>
+
+</div>

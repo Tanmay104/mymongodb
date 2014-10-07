@@ -1,0 +1,97 @@
+<%= form_for @company, :html => { :class => "form-horizontal company" } do |f| %>
+
+  <% if @company.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @company.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :subdomain, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :subdomain, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:subdomain) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address1, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :address1, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:address1) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address2, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :address2, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:address2) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :zip, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :zip, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:zip) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :city, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :city, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:city) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :other_industry_type, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :other_industry_type, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:other_industry_type) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :year_start_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :year_start_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:year_start_date) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :year_end_date, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :year_end_date, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:year_end_date) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :is_blocked, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :is_blocked, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:is_blocked) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                companies_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

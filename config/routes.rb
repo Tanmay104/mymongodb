@@ -1,21 +1,33 @@
 Rails.application.routes.draw do
   
- 
-  devise_for :clients
   get 'admins/home/home'
   get 'admins/home/index'
+  get 'clients/companies/clientlist'
+  devise_for :clients, controllers: { registrations: 'clients/registrations', sessions: 'clients/sessions'}
+  
   devise_for :admins,  path_names: {
-      sign_in: 'login', sign_out: 'logout'
-    }
+      sign_in: 'login', sign_out: 'logout'}, controllers: { registrations: 'admins/registrations', sessions: 'admins/sessions'}
+    
   namespace :clients do
    resources :companies
+   resources :brands
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'admins/home#home'
+   unauthenticated do
+     root to: 'admins/home#home', as: :authenticated
+   end
+   
+  authenticated :admins do
+     root to: 'admins/home#index', as: :admin
+   end
+   
+  authenticated :clients do
+     root to: 'clients/comapnies#index', as: :clients
+   end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

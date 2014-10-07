@@ -1,0 +1,138 @@
+<% if admin_signed_in? %>
+    <h2><b>Company Details</b></h2>
+
+   <style>
+table, td, th {
+    border: 1px solid green;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+}
+
+
+th {
+    
+    background-color: green;
+    color: white;
+}
+</style>
+
+<table border ="2">
+
+  <tr>
+    <th>Name</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>ZIP</th>
+    <th>City</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Industry Type</th>
+    <th>Client</th>
+    
+    
+  </tr>
+    <%#  @clients.each do |client| %>
+  
+    <% @companies.each do |company|  %>
+  <tr>
+    <td>
+      <b><%= company.name %></b>
+      </td>
+     <td>
+    <%= company.address1 %>
+      </td>
+    <td>
+    <%= company.address2 %>
+      </td>
+    
+    <td>
+    <%= company.zip %>
+      </td>
+    <td>
+    <%= company.city %>
+      </td>
+    <td>
+    <%= company.year_start_date %>
+      </td>
+    <td>
+    <%= company.year_end_date %>
+    </td>
+    <td>
+    <%= company.other_industry_type %>
+      </td>
+    <td>
+    <%#= client.email %>
+    </td>
+  </tr>
+   <%#end%> 
+     
+  <% end %>
+  <%# @companies1.each do |company| %>
+    
+  <% #end %>
+  
+</table>
+<br>
+
+
+
+<%else%>
+<style>
+table, td, th {
+    border: 1px solid green;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+}
+
+
+th {
+    
+    background-color: green;
+    color: white;
+}
+</style>
+
+<h2><b>Company Details</b></h2>
+
+
+<table border="1">
+
+  <tr>
+    <th>Name</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>ZIP</th>
+    <th>City</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Industry Type</th>
+    
+    
+  </tr>
+ 
+  <% @companies.each do |company| %>
+    <tr>
+      
+      <td><%=link_to company.name, edit_clients_company_path(company.id) %></td>
+      <td><%= company.address1 %></td>
+      <td><%= company.address2 %></td>
+      <td><%= company.zip %></td>
+      <td><%= company.city %></td>
+      <td><%= company.year_start_date %></td>
+      <td><%= company.year_end_date %></td>
+      <td><%= company.other_industry_type %></td>
+    </tr>
+  <% end %>
+  
+</table>
+<br>
+<%=link_to "Add New Company", new_clients_company_path%>
+<%#=link_to "Edit Company Details", edit_clients_comapny_path%>
+
+<%end%>

@@ -1,0 +1,76 @@
+<%# if admin_signed_in? %>
+    <h2><b>Brand Details</b></h2>
+
+   <style>
+table, td, th {
+    border: 1px solid green;
+}
+
+table {
+    height: 100%;
+    width: 100%;
+}
+
+
+th {
+    
+    background-color: green;
+    color: white;
+}
+</style>
+
+<table border ="2">
+
+  <tr>
+    <th>Brand Name</th>
+    <th>Business Unit</th>
+    <th>Category</th>
+    <th>Life Cycle</th>
+    <th>Brand Manager</th>
+    <th>Email</th>
+    <th>Contact No</th>
+    <th>Actions</th>
+    
+    </tr>
+ 
+    <% @brands.each do |brand| %>
+    <%# @clients.each do |client| %>   
+      <%# client.companies.each do |company| %>
+       
+  
+  <tr>
+    <td>
+      <b><%= brand.name %></b>
+      </td>
+     <td>
+    <%= brand.business_unit%>
+      </td>
+    <td>
+    <%= brand.category %>
+      </td>
+    
+    <td>
+    <%= brand.life_cycle %>
+      </td>
+    <td>
+    <%= brand.brand_manager %>
+      </td>
+    <td>
+    <%= brand.email %>
+      </td>
+    
+    <td>
+    <%= brand.contact_no %>
+      </td>
+    
+  </tr>
+  <%end%>
+  <%#end%>
+  <%#end%>
+</table>
+<br>
+
+<% if client_signed_in? %>
+<%= link_to"Add New brand", new_clients_brand_path %>
+<%end%>
+

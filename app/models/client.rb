@@ -1,27 +1,31 @@
 class Client
   include Mongoid::Document
+  include Mongoid::Timestamps
+  
+  has_many :companies
+  has_many :brands
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Database authenticatable
-  field :email,              type: String, default: ""
-  field :encrypted_password, type: String, default: ""
+  field :email,                   type: String, default: ""
+  field :encrypted_password,      type: String, default: ""
 
   ## Recoverable
-  field :reset_password_token,   type: String
-  field :reset_password_sent_at, type: Time
+  field :reset_password_token,    type: String
+  field :reset_password_sent_at,  type: Time
 
   ## Rememberable
-  field :remember_created_at, type: Time
+    field :remember_created_at,   type: Time
 
   ## Trackable
-  field :sign_in_count,      type: Integer, default: 0
-  field :current_sign_in_at, type: Time
-  field :last_sign_in_at,    type: Time
-  field :current_sign_in_ip, type: String
-  field :last_sign_in_ip,    type: String
+  field :sign_in_count,           type: Integer, default: 0
+  field :current_sign_in_at,      type: Time
+  field :last_sign_in_at,         type: Time
+  field :current_sign_in_ip,      type: String
+  field :last_sign_in_ip,         type: String
 
   ## Confirmable
   # field :confirmation_token,   type: String
@@ -33,4 +37,23 @@ class Client
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+  
+  field :first_name,              type: String, default:  ""
+  field :mid_name,                type: String
+  field :last_name,               type: String, default: ""
+  field :contact_no,              type: String
+  field :address1,                type: String
+  field :address2,                type: String
+  field :zip,                     type: String
+  field :city,                    type: String
+
+  
+  field :setup,                   type: Boolean, default: false
+  field :build_plan,              type: Boolean, default: false
+  field :track,                   type: Boolean, default: false
+  field :report,                  type: Boolean, default: false
+  field :benchmark_report,        type: Boolean, default: false
+  
+
 end
+
